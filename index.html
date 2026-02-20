@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodeMaster Garage</title>
+
+<style>
+
+@keyframes glowMove {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    height: 150px;
+    width: auto;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #00c6ff);
+}
+
+.nav-links a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00c6ff;
+}
+
+body {
+    margin: 0;
+    padding-top: 90px;
+    background: url("bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Dark overlay for better readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.5);
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c6ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+      .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(
+        90deg,
+        #00c6ff,
+        #0072ff,
+        #00ff88,
+        #ff0000,
+        #ff7300,
+        #00c6ff
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowMove 6s linear infinite;
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.6);
+}
+
+        .hero button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background: #00c6ff;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: white;
+        }
+
+        /* Cars Section */
+        .cars {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            flex-wrap: wrap;
+        }
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    transition: 0.4s;
+}
+
+/* BMW - Blue Glow */
+.card:nth-child(1):hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00c6ff,
+                0 0 50px #00c6ff;
+}
+
+/* Lamborghini - Green Glow */
+.card:nth-child(2):hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ff88,
+                0 0 50px #00ff88;
+}
+
+/* Porsche - Red Glow */
+.card:nth-child(3):hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff3c3c,
+                0 0 50px #ff3c3c;
+}
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+        }
+
+        .card button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #00c6ff;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">
+        <img src="logo.png" alt="CodeMaster Logo" class="logo">
+    </a>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Cars</a>
+    </div>
+</nav>
+
+    <section class="hero">
+        <h1>Power Without Limits..</h1>
+        <p>Explore the world's most iconic supercars</p>
+        <button onclick="showMessage()">Explore Now</button>
+    </section>
+
+    <section class="cars">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" alt="BMW">
+            <h3>BMW M4</h3>
+            <p>3.0L Twin Turbo • 0-100km/h in 3.8s</p>
+            <button onclick="carInfo('BMW M4')">View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Lamborghini">
+            <h3>Lamborghini Huracán</h3>
+            <p>V10 Engine • Extreme Performance</p>
+            <button onclick="carInfo('Lamborghini Huracán')">View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Porsche">
+            <h3>Porsche 911</h3>
+            <p>Iconic Design • Track Ready</p>
+            <button onclick="carInfo('Porsche 911')">View Details</button>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 CodeMaster Garage | Built by Amrissh B.V 🚀
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("Welcome to CodeMaster Garage 🚗🔥");
+        }
+
+        function carInfo(carName) {
+            alert(carName + " is a high-performance luxury car!");
+        }
+    </script>
+
+</body>
+</html>
